@@ -9,22 +9,18 @@ const Counter = () => {
     return count === 0 ? "Zero" : count;
   };
 
-  const styles = {
-    fontSize: "50px",
-    fontWeight: "bold",
+  const getBageClasses = () => {
+    let classes = "badge m-2 bg-";
+    classes += count === 0 ? "danger" : "primary";
+
+    return classes;
   };
+
+  // bg-primary bg-danger
 
   return (
     <>
-      <span style={styles} className="badge bg-primary m-2">
-        {formCount()}
-      </span>
-      <span
-        style={{ fontSize: "50px", fontWeight: "bold" }}
-        className="badge bg-primary m-2"
-      >
-        Inline
-      </span>
+      <span className={getBageClasses()}>{formCount()}</span>
       <button className="btn btn-secondary btn-sm">Increment</button>
     </>
   );
