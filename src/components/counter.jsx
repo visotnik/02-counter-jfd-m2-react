@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const Counter = () => {
   const [count, setCount] = useState(0);
+  const [imageUrl, setimageUrl] = useState("https://picsum.photos/200");
 
   // const x = <h1>Zero</h1>;
 
@@ -10,6 +11,7 @@ const Counter = () => {
   };
   return (
     <>
+      <img src={imageUrl} alt="" />
       <span>{formCount()}</span>
       <button>Increment</button>
     </>
