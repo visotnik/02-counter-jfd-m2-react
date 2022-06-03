@@ -25,6 +25,11 @@ const Counter = () => {
     return tags.map((tag) => <li key={tag}>{tag}</li>);
   };
 
+  const handleIncrement = () => {
+    console.log("clicked");
+    setCount(count + 1);
+  };
+
   return (
     <>
       {/* Each child in a list should have a unique "key" prop. */}
@@ -37,7 +42,9 @@ const Counter = () => {
       {/* запись упрощенная без return */}
       {renderTags()}
       <span className={getBageClasses()}>{formCount()}</span>
-      <button className="btn btn-secondary btn-sm">Increment</button>
+      <button onClick={handleIncrement} className="btn btn-secondary btn-sm">
+        Increment
+      </button>
     </>
   );
 };
