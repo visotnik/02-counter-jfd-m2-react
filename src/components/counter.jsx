@@ -25,8 +25,8 @@ const Counter = () => {
     return tags.map((tag) => <li key={tag}>{tag}</li>);
   };
 
-  const handleIncrement = () => {
-    console.log("clicked");
+  const handleIncrement = (productId) => {
+    console.log("clicked ", productId);
     setCount(count + 1);
   };
 
@@ -42,7 +42,10 @@ const Counter = () => {
       {/* запись упрощенная без return */}
       {renderTags()}
       <span className={getBageClasses()}>{formCount()}</span>
-      <button onClick={handleIncrement} className="btn btn-secondary btn-sm">
+      <button
+        onClick={() => handleIncrement({ id: 1 })}
+        className="btn btn-secondary btn-sm"
+      >
         Increment
       </button>
     </>
