@@ -29,6 +29,10 @@ const Counter = () => {
     console.log("clicked ", productId);
     setCount(count + 1);
   };
+  const handleDecrement = (productId) => {
+    console.log("clicked ", productId);
+    if (count > 0) setCount(count - 1);
+  };
 
   return (
     <>
@@ -38,15 +42,21 @@ const Counter = () => {
         return <li>{tag}</li>;
       })} */}
       {/* true&&false / && И возвращает первое ложное значение Или последнее, если ничего не найдено.*/}
-      {tags.length === 0 && "Тегов не найдено"}
+      {/* {tags.length === 0 && "Тегов не найдено"} */}
       {/* запись упрощенная без return */}
-      {renderTags()}
+      {/* {renderTags()} */}
       <span className={getBageClasses()}>{formCount()}</span>
       <button
         onClick={() => handleIncrement({ id: 1 })}
         className="btn btn-secondary btn-sm"
       >
         Increment
+      </button>
+      <button
+        onClick={() => handleDecrement({ id: 2 })}
+        className="btn btn-secondary btn-sm"
+      >
+        Decrement
       </button>
     </>
   );
